@@ -1,35 +1,41 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightThemeBlack from "starlight-theme-black";
+import starlightImageZoom from "starlight-image-zoom";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/withastro/starlight",
+      title: "Анализ и проектирование на UML",
+      tableOfContents: false,
+      locales: {
+        root: {
+          label: "Русский",
+          lang: "ru-RU",
         },
-      ],
-      plugins: [
-        // starlightThemeBlack({}),
-      ],
+      },
+      plugins: [starlightImageZoom()],
       sidebar: [
         {
-          label: "Теоретический материал",
-          autogenerate: { directory: "theory" },
-        },
-        {
-          label: "Справочник по диаграммам",
-          autogenerate: { directory: "diagrams" },
+          label: "План",
+          slug: "plan",
         },
         {
           label: "Лабораторные работы",
           autogenerate: { directory: "labs" },
+        },
+        {
+          label: "Анализ и проектирование ИС",
+          autogenerate: { directory: "theory" },
+        },
+        {
+          label: "Справочник по UML",
+          autogenerate: { directory: "reference" },
+        },
+        {
+          label: "Дополнительная литература",
+          slug: "literature",
         },
       ],
     }),

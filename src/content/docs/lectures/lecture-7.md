@@ -28,11 +28,11 @@ title: "Поведение реализации, согласованность 
 - **Внутреннюю деятельность**. С помощью этого элемента нотации можно показать поведение, связанное с состоянием: `entry` выполняется при входе в состояние, `do` выполняется пока объект находится в состоянии, `exit` выполняется при выходе из состояния. Это не условия, а виды поведения состояния.
 - **Внутренние переходы**. По смыслу они схожи с описанием внутренней деятельности, но позволяют указывать свои условия и события срабатывания эффектов.
 
-![Состояние без конкретики](./lecture-7/state-simple.png)
+![Состояние без конкретики](../assets/lecture-7/state-simple.png)
 
 Состояние без конкретики
 
-![Состояние с действиями при входе в него и выходе из него](./lecture-7/state-simple-internal-activities.png)
+![Состояние с действиями при входе в него и выходе из него](../assets/lecture-7/state-simple-internal-activities.png)
 
 Состояние с действиями при входе в него и выходе из него
 
@@ -42,23 +42,23 @@ title: "Поведение реализации, согласованность 
 
 **Начальное псевдосостояние** показывает начальную вершину региона автомата. Для диаграммы, которая описывает исполняемый жизненный цикл, его обычно стоит показывать явно, чтобы было понятно, с какого состояния начинается поведение.
 
-![Начальное псевдосостояние](./lecture-7/pseudostate-initial.png)
+![Начальное псевдосостояние](../assets/lecture-7/pseudostate-initial.png)
 
 Начальное псевдосостояние
 
 **Конечное состояние** показывает завершение региона автомата. Если диаграмма описывает весь жизненный цикл объекта, это можно трактовать как завершение жизненного цикла; если показан только фрагмент поведения, завершается только рассматриваемая часть.
 
-![state-final.png](./lecture-7/state-final.png)
+![state-final.png](../assets/lecture-7/state-final.png)
 
 **Choice** позволяет выбрать дальнейший переход по guard-условиям.
 
-![pseudostate-choice-binary.png](./lecture-7/pseudostate-choice-binary.png)
+![pseudostate-choice-binary.png](../assets/lecture-7/pseudostate-choice-binary.png)
 
 **Fork** и **join** позволяют показать параллельные ветви поведения, если объект действительно проходит параллельные активности.
 
-![pseudostate-fork.png](./lecture-7/pseudostate-fork.png)
+![pseudostate-fork.png](../assets/lecture-7/pseudostate-fork.png)
 
-![pseudostate-join.png](./lecture-7/pseudostate-join.png)
+![pseudostate-join.png](../assets/lecture-7/pseudostate-join.png)
 
 Переход на диаграмме состояний обычно описывается в формате:
 
@@ -72,7 +72,7 @@ trigger [guard] / effect
 
 Кроме простых состояний есть составные состояния. Они помогают скрыть внутреннюю детализацию и показать, что несколько вложенных состояний относятся к одному крупному этапу жизненного цикла.
 
-![state-composite.png](./lecture-7/state-composite.png)
+![state-composite.png](../assets/lecture-7/state-composite.png)
 
 Составные состояния могут быть простыми или ортогональными. Ортогональные регионы используются, когда объект одновременно находится в нескольких независимых поджизненных циклах. Использовать их стоит осторожно: если параллельность не важна для предметной области, диаграмма станет сложнее без пользы.
 
@@ -84,15 +84,15 @@ trigger [guard] / effect
 
 Протокол как средство описания жизненного цикла классификатора для внешних потребителей
 
-![protocol-state-composite.png](./lecture-7/protocol-state-composite.png)
+![protocol-state-composite.png](../assets/lecture-7/protocol-state-composite.png)
 
 Без истории, без действий в состояниях
 
-![protocol-state-composite.png](./lecture-7/protocol-state-composite%201.png)
+![protocol-state-composite.png](../assets/lecture-7/protocol-state-composite%201.png)
 
 Переходы описывают предусловие, триггер и постусловие
 
-![protocol-transition.png](./lecture-7/protocol-transition.png)
+![protocol-transition.png](../assets/lecture-7/protocol-transition.png)
 
 Протокольная диаграмма состояний описывает допустимые операции классификатора с точки зрения внешнего потребителя. Она отвечает не на вопрос “что происходит внутри UI”, а на вопрос “какие операции допустимы над объектом в данном состоянии”.
 
@@ -128,9 +128,9 @@ trigger [guard] / effect
 
 В учебной модели основной упор стоит делать на `alt`, `opt`, `loop` и `par`. Остальные операторы полезны, но легко перегружают диаграмму, если нет явной причины их использовать.
 
-![sequence-diagram-overview.png](./lecture-7/sequence-diagram-overview.png)
+![sequence-diagram-overview.png](../assets/lecture-7/sequence-diagram-overview.png)
 
-![spring-hibernate-transaction-sequence-diagram-example.png](./lecture-7/spring-hibernate-transaction-sequence-diagram-example.png)
+![spring-hibernate-transaction-sequence-diagram-example.png](../assets/lecture-7/spring-hibernate-transaction-sequence-diagram-example.png)
 
 Стоит также отметить, что есть ещё две диаграммы, которые преследуют ту же цель, что и диаграмма последовательности. Это диаграмма коммуникации и диаграмма синхронизации.
 
