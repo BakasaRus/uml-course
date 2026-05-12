@@ -3,8 +3,12 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
 // https://astro.build/config
 export default defineConfig({
+  site: "https://bakasarus.github.io",
+  base: isGitHubPages ? "/uml-course" : undefined,
   integrations: [
     starlight({
       title: "Анализ и проектирование на UML",
