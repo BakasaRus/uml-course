@@ -7,8 +7,7 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://bakasarus.github.io",
-  base: isGitHubPages ? "/uml-course" : undefined,
+  site: "https://uml.itmo.is",
   integrations: [
     starlight({
       title: "Анализ и проектирование на UML",
