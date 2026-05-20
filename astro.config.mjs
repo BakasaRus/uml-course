@@ -21,10 +21,6 @@ export default defineConfig({
       plugins: [starlightImageZoom()],
       sidebar: [
         {
-          label: "План",
-          slug: "plan",
-        },
-        {
           label: "Лабораторные работы",
           autogenerate: { directory: "labs" },
         },
