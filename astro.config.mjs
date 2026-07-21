@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
 
@@ -11,6 +11,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Анализ и проектирование на UML",
+      customCss: [
+        '@fontsource/jetbrains-mono/400.css',
+        '@fontsource/jetbrains-mono/600.css',
+      ],
       tableOfContents: false,
       locales: {
         root: {
