@@ -26,7 +26,9 @@ export default defineConfig({
       sidebar: [
         {
           label: "Лабораторные работы",
-          autogenerate: { directory: "labs" },
+          items: [{ 
+            autogenerate: { directory: "labs" } 
+          }],
         },
         {
           label: "Анализ и проектирование ИС",
@@ -94,7 +96,9 @@ export default defineConfig({
         },
         {
           label: "Справочник по UML",
-          autogenerate: { directory: "reference" }
+          items: [{ 
+            autogenerate: { directory: "reference" } 
+          }],
         },
         {
           label: "Дополнительная литература",
