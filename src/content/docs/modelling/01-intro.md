@@ -1,5 +1,6 @@
 ---
 title: Введение в курс
+slug: modelling/intro
 ---
 
 :::note[TL;DR]

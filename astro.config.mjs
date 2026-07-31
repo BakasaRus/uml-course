@@ -26,8 +26,8 @@ export default defineConfig({
       sidebar: [
         {
           label: "Лабораторные работы",
-          items: [{ 
-            autogenerate: { directory: "labs" } 
+          items: [{
+            autogenerate: { directory: "labs" }
           }],
         },
         {
@@ -35,69 +35,69 @@ export default defineConfig({
           items: [{
             label: "Основы моделирования",
             items: [
-              'modelling/01-intro',
-              'modelling/02-models-and-modelling',
-              'modelling/03-good-and-bad-models',
-              'modelling/04-notations-and-views',
-              'modelling/05-history-of-modelling',
+              'modelling/intro',
+              'modelling/models-and-modelling',
+              'modelling/good-and-bad-models',
+              'modelling/notations-and-views',
+              'modelling/history-of-modelling',
             ],
             collapsed: true,
           }, {
             label: "Информационная система",
             items: [
-              'modelling/06-information-system',
-              'modelling/07-is-architecture-levels',
-              'modelling/08-software-lifecycle',
+              'modelling/information-system',
+              'modelling/is-architecture-levels',
+              'modelling/software-lifecycle',
             ],
             collapsed: true,
           }, {
             label: "Требования и контекст",
             items: [
-              'modelling/09-requirements',
-              'modelling/10-requirements-gathering',
-              'modelling/11-requirements-quality',
-              'modelling/12-stakeholders-and-boundary',
-              'modelling/13-business-rules-and-constraints',
+              'modelling/requirements',
+              'modelling/business-rules-and-constraints',
+              'modelling/stakeholders-and-boundary',
+              'modelling/requirements-gathering',
+              'modelling/requirements-quality',
             ],
             collapsed: true,
           }, {
             label: "Функции и процессы",
             items: [
-              'modelling/14-capabilities-and-user-goals',
-              'modelling/15-use-case-specification',
-              'modelling/16-scenarios-and-flows',
-              'modelling/17-process-model',
-              'modelling/18-process-decomposition',
-              'modelling/19-process-participants-and-flows',
+              'modelling/capabilities-and-user-goals',
+              'modelling/use-case-specification',
+              'modelling/scenarios-and-flows',
+              'modelling/process-model',
+              'modelling/process-decomposition',
+              'modelling/process-participants-and-flows',
             ],
             collapsed: true,
           }, {
             label: "Предметная область и проектирование",
             items: [
-              'modelling/20-domain-and-vocabulary',
-              'modelling/21-domain-objects',
-              'modelling/22-conceptual-model',
-              'modelling/23-object-oriented-design',
-              'modelling/24-class-identification-methods',
-              'modelling/25-conceptual-vs-technical-model',
-              'modelling/26-project-decisions',
+              'modelling/domain-and-vocabulary',
+              'modelling/domain-objects',
+              'modelling/conceptual-model',
+              'modelling/object-oriented-design',
+              'modelling/class-identification-methods',
+              'modelling/conceptual-vs-technical-model',
+              'modelling/project-decisions',
             ],
             collapsed: true,
           }, {
             label: "Архитектура и согласованность",
             items: [
-              'modelling/27-data-architecture',
-              'modelling/28-software-architecture-and-layers',
-              'modelling/29-system-architecture-and-deployment',
-              'modelling/30-model-consistency-and-traceability',
+              'modelling/data-architecture',
+              'modelling/software-architecture-and-layers',
+              'modelling/system-architecture-and-deployment',
+              'modelling/model-consistency-and-traceability',
             ],
             collapsed: true,
           }],
         },
         {
           label: "Справочник по UML",
-          items: [{ 
-            autogenerate: { directory: "reference" } 
+          items: [{
+            autogenerate: { directory: "reference" }
           }],
         },
         {
