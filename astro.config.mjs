@@ -15,7 +15,6 @@ export default defineConfig({
         '@fontsource/jetbrains-mono/400.css',
         '@fontsource/jetbrains-mono/600.css',
       ],
-      tableOfContents: false,
       locales: {
         root: {
           label: "Русский",
@@ -31,8 +30,9 @@ export default defineConfig({
           }],
         },
         {
-          label: "Анализ и проектирование ИС",
-          items: [{
+          label: "Анализ и проектирование",
+          items: [
+            'modelling', {
             label: "Основы моделирования",
             items: [
               'modelling/intro',
@@ -95,10 +95,67 @@ export default defineConfig({
           }],
         },
         {
-          label: "Справочник по UML",
-          items: [{
-            autogenerate: { directory: "reference" }
-          }],
+          label: "Нотация UML",
+          items: [
+            'notation',
+            {
+              label: "Как читать UML",
+              items: [
+                'notation/model-and-diagrams',
+                'notation/relations',
+                'notation/naming-model-elements',
+                'notation/choosing-a-diagram',
+              ],
+              collapsed: true,
+            }, {
+              label: "Функции и процессы",
+              items: [
+                'notation/usecase-diagrams',
+                'notation/activity-diagrams',
+                'notation/activity-advanced',
+              ],
+              collapsed: true,
+            }, {
+              label: "Структура и жизненный цикл",
+              items: [
+                'notation/conceptual-class-diagrams',
+                'notation/technical-class-diagrams',
+                'notation/object-diagrams',
+                'notation/state-machine-diagrams',
+                'notation/state-machine-advanced',
+              ],
+              collapsed: true,
+            }, {
+              label: "Взаимодействия",
+              items: [
+                'notation/sequence-diagrams',
+                'notation/sequence-advanced',
+                'notation/communication-diagrams',
+                'notation/interaction-overview-diagrams',
+                'notation/timing-diagrams',
+              ],
+              collapsed: true,
+            }, {
+              label: "Архитектура и развёртывание",
+              items: [
+                'notation/package-diagrams',
+                'notation/component-diagrams',
+                'notation/internal-structure-diagrams',
+                'notation/deployment-diagrams',
+                'notation/deployment-advanced',
+              ],
+              collapsed: true,
+            }, {
+              label: "Расширенная нотация",
+              items: [
+                'notation/classifiers-and-namespaces',
+                'notation/stereotypes-and-profiles',
+                'notation/constraints-and-ocl',
+                'notation/information-flows',
+              ],
+              collapsed: true,
+            },
+          ],
         },
         {
           label: "Дополнительная литература",

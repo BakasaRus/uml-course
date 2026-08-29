@@ -18,6 +18,6 @@ sidebar:
 
 Исторический материал нужен для понимания происхождения разных подходов, но не является обязательным этапом проектирования. ADR, напротив, является сквозной практикой: проектные решения фиксируются по мере прохождения любого из этапов.
 
-## Переход к UML-справочнику
+## Переход к нотации UML
 
-Основные соответствия между вопросами анализа и нотацией собраны в [обзоре канонических диаграмм](/reference/04-obzor-diagramm-kanonicheskie-diagrammy) и [обзоре сущностей UML](/reference/02-obzor-suschnostey). Подробное назначение конкретных диаграмм раскрывается в [диаграмме использования](/reference/07-diagramma-ispolzovaniya), [диаграмме деятельности](/reference/08-diagramma-deyatelnosti), [диаграмме классов](/reference/09-diagramma-klassov-i-obektov), [диаграмме последовательности](/reference/12-diagramma-posledovatelnosti), [диаграмме компонентов](/reference/16-diagramma-komponentov) и [диаграмме развёртывания](/reference/18-diagramma-razvertyvaniya).
+Основные соответствия между вопросами анализа и нотацией собраны в [выборе UML-диаграммы](/notation/choosing-a-diagram) и [классификаторах, именах и пространствах имён](/notation/classifiers-and-namespaces). Подробное назначение конкретных диаграмм раскрывается в [диаграмме использования](/notation/usecase-diagrams), [диаграмме деятельности](/notation/activity-diagrams), [концептуальной диаграмме классов](/notation/conceptual-class-diagrams), [диаграмме последовательности](/notation/sequence-diagrams), [диаграмме компонентов](/notation/component-diagrams) и [диаграмме развёртывания](/notation/deployment-diagrams).
