@@ -40,3 +40,5 @@ slug: modelling/is-architecture-levels
 ## UML-представления уровней
 
 Функциональный уровень обычно уточняется [диаграммой использования](/notation/usecase-diagrams) и [диаграммой деятельности](/notation/activity-diagrams). Информационный и предметный уровни фиксируются [концептуальной диаграммой классов](/notation/conceptual-class-diagrams). Программный уровень раскрывается через [диаграммы пакетов](/notation/package-diagrams), [компонентов](/notation/component-diagrams) и [внутренней структуры](/notation/internal-structure-diagrams). Системный уровень связывается с [диаграммой развёртывания](/notation/deployment-diagrams).
+
+[C4](/c4) не образует ещё один уровень архитектуры: Context и Container собирают элементы нескольких уровней в карту для выбранной аудитории.

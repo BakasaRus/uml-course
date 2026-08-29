@@ -63,3 +63,5 @@ sidebar:
 ## В модели
 
 Техническая диаграмма опирается на [объектно-ориентированное проектирование](/modelling/object-oriented-design), различие [концептуальной и технической моделей](/modelling/conceptual-vs-technical-model) и [проектные решения](/modelling/project-decisions). Крупные зависимости затем сворачивают в [пакеты](/notation/package-diagrams) и [компоненты](/notation/component-diagrams).
+
+[C4 Code view](/c4/components-and-code) может вести к этой диаграмме как к детализации одного важного компонента; он не требует строить полную схему классов всей системы.

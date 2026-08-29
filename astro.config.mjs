@@ -157,6 +157,18 @@ export default defineConfig({
           ],
         },
         {
+          label: "Архитектурные представления C4",
+          items: [
+            'c4',
+            'c4/context',
+            'c4/containers',
+            'c4/components-and-code',
+            'c4/dynamic-and-deployment',
+            'c4/uml-and-consistency',
+          ],
+          collapsed: true,
+        },
+        {
           label: "Дополнительная литература",
           slug: "literature",
         },

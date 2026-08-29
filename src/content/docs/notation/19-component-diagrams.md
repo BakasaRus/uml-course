@@ -34,3 +34,5 @@ sidebar:
 ## В модели
 
 Диаграмма опирается на [проектные решения](/modelling/project-decisions) и [программную архитектуру](/modelling/software-architecture-and-layers). Группировку модулей показывает [диаграмма пакетов](/notation/package-diagrams), внутренности одного компонента — [диаграмма внутренней структуры](/notation/internal-structure-diagrams), а физическое окружение — [диаграмма развёртывания](/notation/deployment-diagrams).
+
+[C4 Component view](/c4/components-and-code) группирует связанную функциональность внутри одного C4 Container. Он не равен UML-компоненту, поэтому формальные interfaces и ports остаются предметом этой диаграммы.

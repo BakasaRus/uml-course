@@ -34,3 +34,5 @@ sidebar:
 ## В модели
 
 Диаграмма продолжает [системную архитектуру и развёртывание](/modelling/system-architecture-and-deployment) и [архитектуру данных](/modelling/data-architecture). Логические части берут из [компонентной диаграммы](/notation/component-diagrams); материализация и спецификация развёртывания разобраны в [расширенной нотации развёртывания](/notation/deployment-advanced).
+
+[C4 Deployment view](/c4/dynamic-and-deployment) связывает экземпляры C4 Containers с выбранным окружением. Для точной UML-семантики узлов, сред выполнения и артефактов используйте эту диаграмму.

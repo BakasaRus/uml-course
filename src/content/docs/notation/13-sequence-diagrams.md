@@ -58,3 +58,5 @@ sidebar:
 ## В модели
 
 Диаграмма уточняет [сценарии и потоки](/modelling/scenarios-and-flows) и [техническую модель классов](/notation/technical-class-diagrams). Ветвления и повторное использование взаимодействий раскрыты в [расширенной нотации](/notation/sequence-advanced); альтернативный вид взаимодействия — [диаграмма коммуникации](/notation/communication-diagrams).
+
+[C4 Dynamic view](/c4/dynamic-and-deployment) показывает архитектурно значимый путь через существующие containers и components; эта диаграмма раскрывает его точный протокол и альтернативы.
