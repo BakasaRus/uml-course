@@ -15,7 +15,7 @@ sidebar:
 
 **OCL** (`Object Constraint Language`) — выражения без побочных эффектов для проверки условий и вычисления значений. Наиболее частые виды:
 
-```ocl
+```text
 context Order
 inv: self.items->size() >= 1
 

@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightImageZoom from "starlight-image-zoom";
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
@@ -11,6 +10,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Анализ и проектирование на UML",
+      disable404Route: true,
       customCss: [
         '@fontsource/jetbrains-mono/400.css',
         '@fontsource/jetbrains-mono/600.css',
@@ -21,7 +21,6 @@ export default defineConfig({
           lang: "ru-RU",
         },
       },
-      plugins: [starlightImageZoom()],
       sidebar: [
         {
           label: "Лабораторные работы",
