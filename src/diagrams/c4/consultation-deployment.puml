@@ -1,0 +1,34 @@
+@startuml
+!$ARROW_COLOR = "#94A3B8"
+!$ARROW_FONT_COLOR = "#E2E8F0"
+!$BOUNDARY_COLOR = "#CBD5E1"
+!$LEGEND_TITLE_COLOR = "#E2E8F0"
+!$LEGEND_FONT_COLOR = "#E2E8F0"
+!$LEGEND_DARK_COLOR = "#E2E8F0"
+!$LEGEND_LIGHT_COLOR = "#0F172A"
+!include <C4/C4_Deployment>
+skinparam TitleFontColor #E2E8F0
+skinparam backgroundColor #0F172A
+LAYOUT_TOP_DOWN()
+title Развёртывание — сервис записи на консультации
+
+System_Ext(sso, "Служба единого входа", "Проверяет личность")
+System_Ext(notice, "Сервис уведомлений", "Доставляет подтверждения")
+Deployment_Node(university, "Рабочая среда университета", "Внутренняя сеть") {
+  Deployment_Node(platform, "Платформа приложений", "Среда выполнения") {
+    Container(web, "Веб-приложение", "Браузер / HTTPS", "Интерфейс записи")
+    Container(api, "Серверное приложение", "Прикладной интерфейс", "Обрабатывает записи")
+  }
+  Deployment_Node(services, "Управляемые службы", "Среда данных") {
+    ContainerDb(db, "База данных", "Реляционная БД", "Хранит расписание и записи")
+    Container(worker, "Обработчик уведомлений", "Фоновая задача", "Передаёт сообщения")
+  }
+}
+
+Rel(web, api, "HTTPS")
+Rel(api, db, "Защищённое соединение")
+Rel(api, worker, "Публикует событие")
+Rel(api, sso, "Проверяет личность")
+Rel(worker, notice, "Передаёт сообщение")
+SHOW_LEGEND()
+@enduml

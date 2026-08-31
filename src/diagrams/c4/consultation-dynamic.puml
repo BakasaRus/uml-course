@@ -1,0 +1,28 @@
+@startuml
+!$ARROW_COLOR = "#94A3B8"
+!$ARROW_FONT_COLOR = "#E2E8F0"
+!$BOUNDARY_COLOR = "#CBD5E1"
+!$LEGEND_TITLE_COLOR = "#E2E8F0"
+!$LEGEND_FONT_COLOR = "#E2E8F0"
+!$LEGEND_DARK_COLOR = "#E2E8F0"
+!$LEGEND_LIGHT_COLOR = "#0F172A"
+!include <C4/C4_Dynamic>
+skinparam TitleFontColor #E2E8F0
+skinparam backgroundColor #0F172A
+LAYOUT_TOP_DOWN()
+title Динамика: создание записи
+
+Person(student, "Студент")
+Container(web, "Веб-приложение", "Браузер / HTTPS")
+Container(api, "Серверное приложение", "Прикладной интерфейс")
+ContainerDb(db, "База данных", "Реляционная БД")
+Container(worker, "Обработчик уведомлений", "Фоновая задача")
+
+RelIndex(1, student, web, "Выбирает свободный интервал")
+RelIndex(2, web, api, "Создаёт запись")
+RelIndex(3, api, db, "Проверяет доступность и сохраняет")
+RelIndex(4, db, api, "Подтверждает запись")
+RelIndex(5, api, worker, "Публикует событие")
+RelIndex(6, worker, api, "Подтверждает отправку")
+SHOW_LEGEND()
+@enduml
