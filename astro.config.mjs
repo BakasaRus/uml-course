@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import starlight from "@astrojs/starlight";
+import plantuml from "astro-plantuml";
+import starlightImageZoom from 'starlight-image-zoom';
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
@@ -8,12 +10,19 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 export default defineConfig({
   site: "https://uml.itmo.is",
   integrations: [
+    plantuml({
+      format: "svg",
+      serverUrl: "https://www.plantuml.com/plantuml/svg/",
+      timeout: 15_000,
+    }),
     starlight({
       title: "Анализ и проектирование на UML",
       disable404Route: true,
+      plugins: [starlightImageZoom()],
       customCss: [
         '@fontsource/jetbrains-mono/400.css',
         '@fontsource/jetbrains-mono/600.css',
+        './src/styles/plantuml.css',
       ],
       locales: {
         root: {

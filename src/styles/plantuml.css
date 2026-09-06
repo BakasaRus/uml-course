@@ -1,0 +1,35 @@
+.plantuml-diagram {
+  margin-block: 1rem 1.5rem;
+  overflow-x: auto;
+}
+
+.plantuml-diagram > svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* PlantUML SVGs are inlined, so Starlight variables follow the active theme. */
+.plantuml-diagram > svg [fill="#0F172A"],
+.plantuml-diagram > svg [style*="fill:#0F172A"] {
+  fill: var(--sl-color-bg) !important;
+}
+
+.plantuml-diagram > svg [fill="#1E293B"],
+.plantuml-diagram > svg [fill="#E2E2F0"],
+.plantuml-diagram > svg [style*="fill:#1E293B"],
+.plantuml-diagram > svg [style*="fill:#E2E2F0"] {
+  fill: var(--sl-color-bg-nav) !important;
+}
+
+.plantuml-diagram > svg [fill="#E2E8F0"],
+.plantuml-diagram > svg [style*="fill:#E2E8F0"] {
+  fill: var(--sl-color-text) !important;
+}
+
+.plantuml-diagram > svg [stroke="#94A3B8"],
+.plantuml-diagram > svg [stroke="#CBD5E1"],
+.plantuml-diagram > svg [style*="stroke:#94A3B8"],
+.plantuml-diagram > svg [style*="stroke:#CBD5E1"] {
+  stroke: var(--sl-color-gray-3) !important;
+}
