@@ -23,6 +23,37 @@ sidebar:
 
 ![Артефакт](../assets/lecture-6/deployment-artifact.png)
 
+## Пример: развёртывание записи на консультацию
+
+На рисунке Web работает в браузере студента, Booking и Schedule поставляются одним артефактом серверного приложения, а доставка уведомлений — отдельным worker. Логические контракты между этими частями показаны на [диаграмме компонентов](/notation/component-diagrams).
+
+```plantuml
+@startuml
+top to bottom direction
+
+node "Браузер студента" <<executionEnvironment>> as Browser {
+  artifact "web" as Web
+}
+node "Сервер приложений" <<executionEnvironment>> as ApplicationServer {
+  artifact "booking-application\nBooking + Schedule" as BookingApplication
+}
+node "Worker уведомлений" <<executionEnvironment>> as Worker {
+  artifact "notification-worker\nNotifications" as NotificationWorker
+}
+database "SQL database\nbookings + slots + outbox" as Database
+node "Identity Provider" <<external>> as IdentityProvider
+node "Delivery" <<external>> as Delivery
+
+Browser --> ApplicationServer : HTTPS
+Browser --> IdentityProvider : HTTPS / OIDC
+ApplicationServer --> Database : SQL
+Worker --> Database : SQL / outbox
+Worker --> Delivery : HTTPS
+@enduml
+```
+
+При успешном бронировании сервер в одной SQL-транзакции резервирует слот, сохраняет подтверждённую запись и добавляет событие в outbox; при ошибке резервирование откатывается вместе с остальными изменениями. Worker читает outbox из той же базы и асинхронно передаёт уведомление в Delivery. Диаграмма не добавляет брокер или отдельные процессы для Booking и Schedule: они размещены в одном приложении.
+
 ## Проверка диаграммы
 
 - логические компоненты не подменены их физическими копиями;

@@ -21,12 +21,12 @@ sidebar:
 
 У свойства могут быть дополнительные характеристики. `/{имя}` обозначает производное значение, `{readOnly}` — значение только для чтения, `{id}` — часть идентификатора, а `ordered` и `unique` задают упорядоченность и уникальность коллекции. Важны только те характеристики, которые несут проверяемое правило:
 
-| Коллекция значений | `isOrdered` | `isUnique` |
-| --- | --- | --- |
-| Мультимножество | `false` | `false` |
-| Список | `true` | `false` |
-| Множество | `false` | `true` |
-| Упорядоченное множество | `true` | `true` |
+| Коллекция значений      | `isOrdered` | `isUnique` |
+| ----------------------- | ----------- | ---------- |
+| Мультимножество         | `false`     | `false`    |
+| Список                  | `true`      | `false`    |
+| Множество               | `false`     | `true`     |
+| Упорядоченное множество | `true`      | `true`     |
 
 `subsets` фиксирует, что значения свойства входят в другое свойство, `union` — что свойство объединяет подмножества, а `redefines` — что свойство переопределяет унаследованное. Эти ключевые слова полезны для точных технических моделей и метамоделей, но редко нужны на обзорной диаграмме.
 
@@ -60,8 +60,68 @@ sidebar:
 
 Свойства ассоциации могут иметь упорядоченность, уникальность, значение только для чтения, включение в другое свойство или переопределение; в UML для этого служат `ordered`, `unique`, `readOnly`, `subsets` и `redefines`. Их добавляют только когда это формальное свойство значимо для решения. Полный набор редких свойств не делает техническую диаграмму точнее сам по себе.
 
+## Сквозной пример: реализация записи
+
+Перейдём от [предметной модели консультаций](/notation/conceptual-class-diagrams) к реализации одного сценария. Контроллер принимает команду, сервис координирует запись, а интерфейсы отделяют его от хранения, расписания и уведомлений.
+
+```plantuml
+@startuml
+top to bottom direction
+hide empty members
+class BookingController {
+  +create(command: CreateBooking): BookingResult
+}
+class BookingService {
+  +create(command: CreateBooking): BookingResult
+}
+interface SchedulePort {
+  +reserve(slotId: String): Boolean
+}
+interface BookingRepository {
+  +saveConfirmed(command: CreateBooking): BookingResult
+}
+interface NotificationPort {
+  +enqueue(result: BookingResult)
+}
+class ScheduleService
+class SqlBookingRepository
+class OutboxNotificationAdapter
+class CreateBooking <<dataType>> {
+  studentId: String
+  slotId: String
+  question: String [0..1]
+}
+class BookingResult <<dataType>> {
+  bookingId: String
+  status: BookingStatus
+}
+enum BookingStatus {
+  Created
+  Confirmed
+  Completed
+  Cancelled
+}
+BookingController --> BookingService
+BookingController ..> CreateBooking
+BookingService ..> BookingResult
+BookingResult ..> BookingStatus
+BookingService ..> SchedulePort : использует
+BookingService ..> BookingRepository : использует
+BookingService ..> NotificationPort : использует
+ScheduleService ..|> SchedulePort
+SqlBookingRepository ..|> BookingRepository
+OutboxNotificationAdapter ..|> NotificationPort
+SchedulePort -[hidden]down-> SqlBookingRepository
+BookingRepository -[hidden]down-> OutboxNotificationAdapter
+@enduml
+```
+
+`Created`, `Confirmed`, `Completed`, `Cancelled` соответствуют состояниям `Создана`, `Подтверждена`, `Завершена`, `Отменена`. `reserve` атомарно проверяет доступность и резервирует интервал: два конкурентных запроса не должны оба получить успех. В этой реализации резервирование, `saveConfirmed` и запись уведомления в outbox через `enqueue` выполняются в одной транзакции общей БД. Ошибка откатывает все три изменения; внешний сервис доставки в транзакцию не входит.
+
+Outbox — сохранённое задание для фонового обработчика, а не уже доставленное уведомление. Эти же операции показаны в [успешном взаимодействии](/notation/sequence-diagrams), а классы свёрнуты в логические части на [диаграмме компонентов](/notation/component-diagrams).
+
 ## В модели
 
-Техническая диаграмма опирается на [объектно-ориентированное проектирование](/modelling/object-oriented-design), различие [концептуальной и технической моделей](/modelling/conceptual-vs-technical-model) и [проектные решения](/modelling/project-decisions). Крупные зависимости затем сворачивают в [пакеты](/notation/package-diagrams) и [компоненты](/notation/component-diagrams).
+Техническая диаграмма опирается на [объектно-ориентированное проектирование](/modelling/object-oriented-design), различие [концептуальной и технической моделей](/modelling/conceptual-vs-technical-model) и [проектные решения](/modelling/project-decisions). Общая семантика типов, свойств и параметров разобрана в [сквозной справке](/notation/types-properties-and-values), а различие операции, метода и поведения — в статье о [поведении и вызовах](/notation/behaviors-events-and-calls). Крупные зависимости затем сворачивают в [пакеты](/notation/package-diagrams) и [компоненты](/notation/component-diagrams).
 
 [Представление кода C4](/c4/components-and-code) может вести к этой диаграмме как к детализации одного важного компонента; оно не требует строить полную схему классов всей системы.

@@ -33,3 +33,8 @@
 .plantuml-diagram > svg [style*="stroke:#CBD5E1"] {
   stroke: var(--sl-color-gray-3) !important;
 }
+
+/* Keep borders and relationship arrows readable at every zoom level. */
+.plantuml-diagram > svg :is(ellipse, line, path, polygon, polyline, rect) {
+  stroke-width: 1.6px !important;
+}

@@ -3,6 +3,13 @@ import { defineConfig, fontProviders } from "astro/config";
 import starlight from "@astrojs/starlight";
 import plantuml from "astro-plantuml";
 import starlightImageZoom from 'starlight-image-zoom';
+import plantUmlDefaults from "./src/integrations/plantuml-defaults.js";
+import {
+  PLANTUML_DIAGRAMS_PATH,
+  PLANTUML_SERVER_URL,
+  PLANTUML_TIMEOUT,
+} from "./src/lib/plantuml.js";
+
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
@@ -10,10 +17,12 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 export default defineConfig({
   site: "https://uml.itmo.is",
   integrations: [
+    plantUmlDefaults(),
     plantuml({
+      diagramsPath: PLANTUML_DIAGRAMS_PATH,
       format: "svg",
-      serverUrl: "https://www.plantuml.com/plantuml/svg/",
-      timeout: 15_000,
+      serverUrl: PLANTUML_SERVER_URL,
+      timeout: PLANTUML_TIMEOUT,
     }),
     starlight({
       title: "Анализ и проектирование на UML",

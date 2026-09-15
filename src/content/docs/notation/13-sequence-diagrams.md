@@ -47,6 +47,57 @@ sidebar:
 
 Диаграмма последовательности не является процессной схемой: она не заменяет диаграмму деятельности с дорожками, объектными потоками и правилами ветвления. Она также не является диаграммой компонентов или развёртывания: линии жизни могут представлять компоненты, но не показывают всю архитектуру.
 
+## Сквозной пример: успешная запись
+
+Студент уже вошёл через SSO и выбрал интервал. Покажем успешный вызов операций из [технической модели](/notation/technical-class-diagrams). Типы участников указаны под короткими именами, чтобы различать экземпляры и их контракты.
+
+```plantuml
+@startuml
+hide footbox
+actor "Студент" as Student
+boundary "web" as Web
+participant "api:\nBookingController" as Api
+participant "service:\nBookingService" as Service
+participant "schedule:\nSchedulePort" as Schedule
+participant "repo:\nBookingRepository" as Repo
+participant "outbox:\nNotificationPort" as Outbox
+Student -> Web : записаться
+Web -> Api : create(command)
+activate Api
+Api -> Service : create(command)
+activate Service
+group Одна транзакция БД
+  Service -> Schedule : reserve(command.slotId)
+  activate Schedule
+  Schedule --> Service : true
+  deactivate Schedule
+  Service -> Repo : saveConfirmed(command)
+  activate Repo
+  Repo --> Service : result: BookingResult
+  deactivate Repo
+  Service -> Outbox : enqueue(result)
+  activate Outbox
+  Outbox --> Service : задание сохранено
+  deactivate Outbox
+end
+note over Service, Outbox : Транзакция зафиксирована
+Service --> Api : result
+deactivate Service
+Api --> Web : result
+deactivate Api
+Web --> Student : запись подтверждена
+... асинхронно, после фиксации ...
+note over Outbox
+Фоновый обработчик читает outbox
+и передаёт уведомление службе доставки.
+end note
+@enduml
+```
+
+`enqueue` — синхронная запись задания, но доставка выполняется асинхронно: пользователь не ждёт внешнюю службу. Рамка группирует транзакцию выбранной реализации; сама по себе графическая рамка не обеспечивает атомарности. При конкурентной записи `reserve` может вернуть `false` — это альтернативный исход из [диаграммы деятельности](/notation/activity-diagrams), намеренно не включённый в успешную трассу.
+
+После ответа запись находится в состоянии `Подтверждена` из [автомата записи](/notation/state-machine-diagrams). Размещение сервера, outbox и обработчика раскрывает [диаграмма развёртывания](/notation/deployment-diagrams).
+
 ## Проверка диаграммы
 
 - сценарий ограничен одним понятным результатом;
@@ -57,6 +108,6 @@ sidebar:
 
 ## В модели
 
-Диаграмма уточняет [сценарии и потоки](/modelling/scenarios-and-flows) и [техническую модель классов](/notation/technical-class-diagrams). Ветвления и повторное использование взаимодействий раскрыты в [расширенной нотации](/notation/sequence-advanced); альтернативный вид взаимодействия — [диаграмма коммуникации](/notation/communication-diagrams).
+Диаграмма уточняет [сценарии и потоки](/modelling/scenarios-and-flows) и [техническую модель классов](/notation/technical-class-diagrams). Различия сообщения, вызова операции и сигнала собраны в статье о [поведении и событиях](/notation/behaviors-events-and-calls). Ветвления и повторное использование взаимодействий раскрыты в [расширенной нотации](/notation/sequence-advanced); альтернативный вид взаимодействия — [диаграмма коммуникации](/notation/communication-diagrams).
 
 [Динамическое представление C4](/c4/dynamic-and-deployment) показывает архитектурно значимый путь через существующие контейнеры и компоненты; эта диаграмма раскрывает его точный протокол и альтернативы.
