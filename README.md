@@ -1,49 +1,136 @@
-# Starlight Starter Kit: Basics
+# Лекции по дисциплине «Анализ и проектирование на UML»
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Учебные материалы по моделированию информационных систем: от границ системы,
+требований и пользовательских целей до предметной модели, поведения и архитектуры.
+Репозиторий содержит лекции, справочные статьи, задания лабораторных работ
+и исходники сайта курса.
 
+Курс рассматривает UML как язык согласованных моделей, а не набор отдельных
+картинок. В материалах показано, как выбирать представление под конкретный вопрос,
+проверять его на сценариях и связывать требования, диаграммы и проектные решения.
+Сквозной пример — сервис записи на консультации.
+
+**Сайт курса:** [uml.itmo.is](https://uml.itmo.is/).
+
+## Разделы курса
+
+### Лекции
+
+В `src/content/docs/lectures/` находятся восемь лекций:
+
+- [Моделирование информационных систем: вопрос, модель, представление](https://uml.itmo.is/lectures/lecture-1/)
+- [Требования, участники и варианты использования](https://uml.itmo.is/lectures/lecture-2/) 
+- [Процессы, ответственность и диаграмма деятельности](https://uml.itmo.is/lectures/lecture-3/)
+- [Предметная область и концептуальная модель](https://uml.itmo.is/lectures/lecture-4/) 
+- [Проектные решения и архитектура реализации](https://uml.itmo.is/lectures/lecture-5/) 
+- [Поведение системы: состояния, последовательности и взаимодействия](https://uml.itmo.is/lectures/lecture-6/)
+- [UML как язык моделей: элементы, отношения и выбор диаграммы](https://uml.itmo.is/lectures/lecture-7/)
+- [Архитектурные представления C4](https://uml.itmo.is/lectures/lecture-8/)
+
+Каждая содержит ссылки на справочные материалы, план занятия, теоретическую часть и примеры
+для демонстрации преподавателем.
+
+### Справочные материалы
+
+- **[Анализ и проектирование ИС](https://uml.itmo.is/modelling/)** —
+  основы моделирования, требования, процессы, предметная область, проектные решения,
+  архитектура и трассируемость. Исходники: `src/content/docs/modelling/`.
+- **[Справочник по UML](https://uml.itmo.is/notation/)** —
+  выбор диаграмм, смысл элементов и отношений, базовая и расширенная нотация,
+  примеры и типичные ошибки. Исходники: `src/content/docs/notation/`.
+- **[Архитектурные представления C4](https://uml.itmo.is/c4/)** —
+  контекст, контейнеры, компоненты, представление кода, динамика и развёртывание,
+  а также согласованность C4 с UML. Исходники: `src/content/docs/c4/`.
+
+Справочники дополняют лекции: основной материал используется на занятиях,
+а подробные и редкие конструкции доступны для самостоятельной работы.
+
+### Лабораторные работы
+
+[Раздел лабораторных работ](https://uml.itmo.is/labs/) содержит семь заданий,
+требования к результатам, методические рекомендации и критерии оценивания.
+Исходники: `src/content/docs/labs/`.
+
+Работы образуют последовательный проект: освоение редактора, формирование
+требований, варианты использования и сценарии, предметная и техническая модели,
+архитектура, развёртывание и поведение системы. Начиная с ЛР 3, диаграммы ведутся
+в одном проекте **Visual Paradigm Community Edition**; новые решения требуют
+проверки ранее созданных представлений. C4 используется для итоговой сверки,
+но не заменяет UML-артефакты лабораторных работ.
+
+Отдельно опубликованы [формат зачёта и вопросы для подготовки](https://uml.itmo.is/pass-topics/)
+и [дополнительная литература](https://uml.itmo.is/literature/).
+
+## Технологический стек
+
+Сайт собирается в статические страницы; отдельное серверное приложение ему не требуется.
+
+| Технология | Назначение |
+| --- | --- |
+| [Astro](https://astro.build/) | Сборка сайта, маршрутизация и обработка ресурсов |
+| [Starlight](https://starlight.astro.build/) | Интерфейс документации, боковая навигация, оглавление и светлая/тёмная темы |
+| Markdown и MDX | Тексты материалов, frontmatter и встраивание компонентов |
+| Sätteri | Обработка Markdown в Astro и применение общих настроек PlantUML |
+| [Pagefind](https://pagefind.app/) | Поиск по материалам через индекс, создаваемый при сборке Starlight |
+| [PlantUML](https://plantuml.com/) и `astro-plantuml` | UML-диаграммы в текстовых блоках и их отображение в SVG |
+| `starlight-image-zoom` и Sharp | Увеличение иллюстраций и оптимизация изображений |
+| GitHub Actions и GitHub Pages | Автоматическая сборка и публикация сайта |
+
+Конфигурация сайта и навигации находится в `astro.config.mjs`, зависимости
+и команды — в `package.json`. Workflow `.github/workflows/deploy.yml`
+публикует сайт после изменений в ветке `main` и допускает ручной запуск.
+
+## Локальная разработка
+
+Нужны **Node.js 22.12.0 или новее** и **npm 9.6.5 или новее**.
+Все команды выполняются из корня репозитория.
+
+```sh
+npm ci
+npm run dev
 ```
-npm create astro@latest -- --template starlight
-```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Сайт для разработки доступен по `http://localhost:4321`.
 
-## 🚀 Project Structure
+| Команда | Назначение |
+| --- | --- |
+| `npm run dev` | Запустить сервер разработки |
+| `npm run build` | Собрать сайт в `dist/` |
+| `npm run preview` | Открыть локальный предпросмотр собранного сайта |
+| `npm run astro -- preview stop` | Остановить сервер предпросмотра |
+| `npm run generate:plantuml` | Перегенерировать SVG из блоков PlantUML в материалах |
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Генератор PlantUML обращается к серверу, указанному в `src/lib/plantuml.js`,
+поэтому для перегенерации диаграмм нужен доступ к сети. Общие параметры оформления
+применяются и генератором, и интеграцией сайта. SVG блоков хранятся
+в `src/diagrams/plantuml/`; после изменения блока или общих параметров обновите их.
+Отдельные исходники C4 находятся в `src/diagrams/c4/`, соответствующие изображения —
+в `src/content/docs/assets/c4/`; команда `generate:plantuml` эти `.puml` не обрабатывает.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+## Contributions
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+Можно предложить исправление ошибки, уточнить термин или объяснение, улучшить
+пример и диаграмму либо доработать сайт. Для сообщения о проблеме откройте issue
+со ссылкой на материал и описанием ошибки; для готового исправления — pull request.
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+1. Создайте fork и отдельную ветку для изменения.
+2. Измените материал в соответствующем разделе `src/content/docs/`.
+   Сохраняйте русский язык, согласованную терминологию и связь примеров с другими
+   представлениями той же системы. Не дублируйте справочные объяснения в каждой лекции.
+3. Сохраняйте стабильные адреса материалов: они задаются явным ненумерованным `slug`
+   во frontmatter. Например, файл `notation/05-usecase-diagrams.md` имеет
+   `slug: notation/usecase-diagrams` и адрес `/notation/usecase-diagrams`.
+   Номер остаётся в имени исходника для упорядочивания, но не входит в ссылки
+   и элементы навигации. Для новой страницы проверьте также `astro.config.mjs`.
+4. Если меняете диаграмму, включите в pull request исходник и обновлённый SVG.
+   Для блоков PlantUML используйте `npm run generate:plantuml`; для отдельных
+   C4-исходников обновите соответствующее изображение в `src/content/docs/assets/c4/`.
+5. Выполните `npm run build` и проверьте изменённые страницы через `npm run preview`:
+   ссылки на материалы и заголовки, изображения и отображение в обеих темах.
+6. В pull request опишите, что изменено, почему и как проверено.
+   Для изменений интерфейса приложите скриншоты.
 
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+Используйте ссылки на адреса страниц из `slug`, а не на исходники вида `./05-usecase-diagrams.md`.
+Иллюстрации материалов находятся в `src/content/docs/assets/`; статические ресурсы —
+в `public/`. Для вложений вне `public/` используйте импорт с `?url` в MDX,
+как в `src/content/docs/labs/lab-4.mdx`.
