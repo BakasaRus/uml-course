@@ -190,6 +190,10 @@ export default defineConfig({
           label: "Дополнительная литература",
           slug: "literature",
         },
+        {
+          label: "Подготовка к зачёту",
+          slug: "exam-preparation",
+        },
       ],
     }),
   ],
