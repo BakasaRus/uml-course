@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="515" viewBox="0 0 740 515" role="img" aria-labelledby="title desc">
+  <title id="title">Точки подмашины и ссылки на них</title>
+  <desc id="desc">В определении автомата Доставка находятся entryPoint start и exitPoint done. На использующем состоянии доставка: Доставка показаны ConnectionPointReference на эти точки.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="515" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Определение повторно используемого автомата</tspan></text>
+    <rect x="90" y="60" width="560" height="180" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 90 92 H 258 L 270 80 V 60" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="102" y="83" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="102" dy="0">stm Доставка</tspan></text>
+    <circle cx="90" cy="155" r="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="650" cy="155" r="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 645 150 L 655 160 M 655 150 L 645 160" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="90" y="123" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="90" dy="0">start</tspan></text>
+    <text x="650" y="123" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="650" dy="0">done</tspan></text>
+    <rect x="275" y="125" width="190" height="60" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="160.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">В пути</tspan></text>
+    <path d="M 100 155 H 275" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 465 155 H 640" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="552" y="142" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="552" dy="0">доставлено</tspan></text>
+    <path d="M 28 270 H 712" fill="none" stroke="#CBD5E1"/>
+    <text x="28" y="305" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Использование в другом автомате</tspan></text>
+    <rect x="235" y="350" width="275" height="100" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="372.5" y="405.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="372.5" dy="0">доставка: Доставка</tspan></text>
+    <rect x="25" y="375" width="140" height="50" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="95.0" y="405.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="95.0" dy="0">Собран</tspan></text>
+    <rect x="590" y="375" width="125" height="50" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="652.5" y="405.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="652.5" dy="0">Получен</tspan></text>
+    <circle cx="235" cy="400" r="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="510" cy="400" r="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 505 395 L 515 405 M 515 395 L 505 405" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="235" y="336" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="235" dy="0">start</tspan></text>
+    <text x="510" y="336" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="510" dy="0">done</tspan></text>
+    <path d="M 165 400 H 225" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 520 400 H 590" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="370" y="485" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">На использующем состоянии кружки ссылаются на точки определения.</tspan></text>
+  </g>
+</svg>

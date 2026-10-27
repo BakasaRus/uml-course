@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="505" viewBox="0 0 740 505" role="img" aria-labelledby="title desc">
+  <title id="title">Поверхностная и глубокая история</title>
+  <desc id="desc">Показаны два фрагмента составного состояния Обработка. До выхода активно Работа::B. Возврат через H входит в Работу по умолчанию в A, через H* восстанавливает B. Исходящий переход истории задаёт первый вход.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="505" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="185" y="32" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="185" dy="0">H — поверхностная история</tspan></text>
+    <rect x="20" y="62" width="330" height="340" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="185" y="88" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="185" dy="0">Обработка</tspan></text>
+    <path d="M 20 103 H 350" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="65" cy="145" r="17" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="65" y="151" font-size="18" text-anchor="middle" fill="#0F172A"><tspan x="65" dy="0">H</tspan></text>
+    <path d="M 20 145 H 48" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="105" y="200" width="210" height="180" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="210" y="223" font-size="17" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="210" dy="0">Работа</tspan></text>
+    <path d="M 105 234 H 315" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="210" cy="250" r="5" fill="#334155" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 210 255 V 270" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="135" y="270" width="150" height="36" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="210.0" y="293.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="210.0" dy="0">A</tspan></text>
+    <rect x="135" y="331" width="150" height="36" rx="14" fill="#EFF6FF" stroke="#334155" stroke-width="1.8"/>
+    <text x="210.0" y="354.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="210.0" dy="0">B</tspan></text>
+    <path d="M 210 306 V 331" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="242" y="324" font-size="13" text-anchor="middle" fill="#0F172A"><tspan x="242" dy="0">далее</tspan></text>
+    <path d="M 65 162 V 260 H 105" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="185" y="428" font-size="16" text-anchor="middle" fill="#475569"><tspan x="185" dy="0">До выхода: Работа::B</tspan></text>
+    <text x="185" y="455" font-size="17" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="185" dy="0">Результат: Работа::A</tspan></text>
+    <text x="555" y="32" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="555" dy="0">H* — глубокая история</tspan></text>
+    <rect x="390" y="62" width="330" height="340" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="555" y="88" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="555" dy="0">Обработка</tspan></text>
+    <path d="M 390 103 H 720" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="435" cy="145" r="17" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="435" y="151" font-size="18" text-anchor="middle" fill="#0F172A"><tspan x="435" dy="0">H*</tspan></text>
+    <path d="M 390 145 H 418" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="475" y="200" width="210" height="180" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="580" y="223" font-size="17" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="580" dy="0">Работа</tspan></text>
+    <path d="M 475 234 H 685" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="580" cy="250" r="5" fill="#334155" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 580 255 V 270" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="505" y="270" width="150" height="36" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="580.0" y="293.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="580.0" dy="0">A</tspan></text>
+    <rect x="505" y="331" width="150" height="36" rx="14" fill="#EFF6FF" stroke="#334155" stroke-width="1.8"/>
+    <text x="580.0" y="354.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="580.0" dy="0">B</tspan></text>
+    <path d="M 580 306 V 331" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="612" y="324" font-size="13" text-anchor="middle" fill="#0F172A"><tspan x="612" dy="0">далее</tspan></text>
+    <path d="M 435 162 V 260 H 475" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="555" y="428" font-size="16" text-anchor="middle" fill="#475569"><tspan x="555" dy="0">До выхода: Работа::B</tspan></text>
+    <text x="555" y="455" font-size="17" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="555" dy="0">Результат: Работа::B</tspan></text>
+    <text x="370" y="488" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Исходящая стрелка H/H* задаёт маршрут при отсутствии истории.</tspan></text>
+  </g>
+</svg>
