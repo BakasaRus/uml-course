@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="360" viewBox="0 0 740 360" role="img" aria-labelledby="title desc">
+  <title id="title">Синхронизация с joinSpec</title>
+  <desc id="desc">Управляющие потоки оплаты a, автоматической проверки b и ручной проверки c сходятся в соединение с условием a and (b or c).</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="360" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Оплата и один из способов проверки</tspan></text>
+    <rect x="28" y="65" width="245" height="60" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="150.5" y="100.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="150.5" dy="0">Принять оплату</tspan></text>
+    <rect x="28" y="155" width="245" height="60" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="150.5" y="179.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="150.5" dy="0">Пройти автоматическую</tspan><tspan x="150.5" dy="22">проверку</tspan></text>
+    <rect x="28" y="245" width="245" height="60" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="150.5" y="269.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="150.5" dy="0">Пройти ручную</tspan><tspan x="150.5" dy="22">проверку</tspan></text>
+    <rect x="425" y="80" width="8" height="220" fill="#334155"/>
+    <path d="M 273 95 H 425" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="345" y="83" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="345" dy="0">a</tspan></text>
+    <path d="M 273 185 H 425" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="345" y="173" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="345" dy="0">b</tspan></text>
+    <path d="M 273 275 H 425" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="345" y="263" font-size="18" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="345" dy="0">c</tspan></text>
+    <text x="551" y="63" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="551" dy="0">{joinSpec = a and (b or c)}</tspan></text>
+    <rect x="515" y="155" width="197" height="60" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="613.5" y="179.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="613.5" dy="0">Передать заказ</tspan><tspan x="613.5" dy="22">в отправку</tspan></text>
+    <path d="M 433 185 H 515" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="370" y="335" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Для одного заказа ветви b и c здесь альтернативны.</tspan></text>
+  </g>
+</svg>

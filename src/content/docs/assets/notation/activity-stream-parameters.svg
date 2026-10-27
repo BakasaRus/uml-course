@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="365" viewBox="0 0 740 365" role="img" aria-labelledby="title desc">
+  <title id="title">Потоковые параметры и выход исключения</title>
+  <desc id="desc">Параметры позиций на границе деятельности помечены stream. Выход failure с треугольником обозначает исключительное завершение.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="365" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="110" y="40" width="520" height="270" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="370" y="70" font-size="19" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="370" dy="0">Проверить поступающие позиции</tspan></text>
+    <rect x="285" y="145" width="170" height="65" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="172.28" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">Проверить</tspan><tspan x="370.0" dy="22">позицию</tspan></text>
+    <rect x="271" y="165" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="455" y="152" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="455" y="189" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="28" y="147" width="170" height="55" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="113.0" y="169.44" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="113.0" dy="0">items:</tspan><tspan x="113.0" dy="21">OrderItem[0..*]</tspan></text>
+    <text x="110" y="131" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="110" dy="0">{stream}</tspan></text>
+    <rect x="552" y="106" width="160" height="55" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="632.0" y="128.44" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="632.0" dy="0">valid:</tspan><tspan x="632.0" dy="21">OrderItem[0..*]</tspan></text>
+    <text x="632" y="90" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="632" dy="0">{stream}</tspan></text>
+    <rect x="552" y="233" width="160" height="55" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="632.0" y="255.44" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="632.0" dy="0">failure:</tspan><tspan x="632.0" dy="21">ValidationError</tspan></text>
+    <path d="M 700 220 L 714 220 L 707 208 Z" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+    <path d="M 198 174 H 271" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 469 159 H 510 V 133 H 552" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 469 196 H 510 V 260 H 552" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 471 192 L 482 192 L 476.5 182 Z" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+    <text x="370" y="344" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Ошибка завершает выполнение; это не поток отклонённых позиций.</tspan></text>
+  </g>
+</svg>

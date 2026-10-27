@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="270" viewBox="0 0 740 270" role="img" aria-labelledby="title desc">
+  <title id="title">Обычный контакт и ValuePin</title>
+  <desc id="desc">Заказ поступает по объектному потоку в обычный контакт. Лимит три вычисляется через ValuePin без входящего потока.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="270" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Вход из потока и вход из значения</tspan></text>
+    <rect x="35" y="112" width="170" height="60" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="120.0" y="147.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="120.0" dy="0">order: Order</tspan></text>
+    <rect x="400" y="100" width="285" height="115" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="542.5" y="152.28" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="542.5" dy="0">Проверить число</tspan><tspan x="542.5" dy="22">попыток заказа</tspan></text>
+    <rect x="386" y="120" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 205 127 H 386" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="307" y="106" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="307" dy="0">order: Order</tspan></text>
+    <rect x="386" y="178" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="365" y="191" font-size="19" text-anchor="end" fill="#0F172A" font-weight="700"><tspan x="365" dy="0">3</tspan></text>
+    <text x="290" y="230" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="290" dy="0">limit: Integer — ValuePin</tspan></text>
+    <text x="220" y="75" font-size="15" text-anchor="middle" fill="#475569"><tspan x="220" dy="0">Обычный InputPin</tspan></text>
+  </g>
+</svg>

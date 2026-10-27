@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="570" viewBox="0 0 740 570" role="img" aria-labelledby="title desc">
+  <title id="title">Центральный буфер и хранилище данных</title>
+  <desc id="desc">Фрагменты объектных потоков. Буфер передаёт один токен одному потребителю; хранилище оставляет копию передаваемого токена с тем же значением.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="570" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="36" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Центральный буфер: токен покидает узел</tspan></text>
+    <rect x="28" y="65" width="175" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="115.5" y="91.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="115.5" dy="0">Принять заказ</tspan><tspan x="115.5" dy="22">из веб-формы</tspan></text>
+    <rect x="203" y="90" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="28" y="185" width="175" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="115.5" y="211.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="115.5" dy="0">Ввести заказ</tspan><tspan x="115.5" dy="22">оператором</tspan></text>
+    <rect x="203" y="210" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="275" y="125" width="190" height="78" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="158.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">«centralBuffer»</tspan><tspan x="370.0" dy="22">заказы: Order</tspan></text>
+    <path d="M 217 97 H 245 V 145 H 275" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 217 217 H 245 V 182 H 275" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <rect x="550" y="65" width="162" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="631.0" y="91.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="631.0" dy="0">Обычная</tspan><tspan x="631.0" dy="22">обработка</tspan></text>
+    <rect x="536" y="90" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="550" y="185" width="162" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="631.0" y="211.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="631.0" dy="0">Срочная</tspan><tspan x="631.0" dy="22">обработка</tspan></text>
+    <rect x="536" y="210" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 465 145 H 500 V 97 H 536" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 465 182 H 500 V 217 H 536" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="505" y="65" font-size="14" text-anchor="middle" fill="#0F172A"><tspan x="505" dy="0">[обычный]</tspan></text>
+    <text x="505" y="260" font-size="14" text-anchor="middle" fill="#0F172A"><tspan x="505" dy="0">[срочный]</tspan></text>
+    <text x="370" y="294" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Исходящие потоки не заменяют fork.</tspan></text>
+    <path d="M 28 317 H 712" fill="none" stroke="#CBD5E1"/>
+    <text x="28" y="353" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Хранилище: значение доступно для повторного чтения</tspan></text>
+    <rect x="28" y="405" width="175" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="115.5" y="431.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="115.5" dy="0">Обновить</tspan><tspan x="115.5" dy="22">каталог</tspan></text>
+    <rect x="203" y="430" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="275" y="395" width="190" height="85" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="432.28" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">«datastore»</tspan><tspan x="370.0" dy="22">каталог: Product</tspan></text>
+    <rect x="550" y="405" width="162" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="631.0" y="431.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="631.0" dy="0">Прочитать</tspan><tspan x="631.0" dy="22">данные товара</tspan></text>
+    <rect x="536" y="430" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 217 437 H 275" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <path d="M 465 437 H 536" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="370" y="522" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Копируется токен с тем же значением,</tspan><tspan x="370" dy="21">а не сам предметный объект.</tspan></text>
+  </g>
+</svg>

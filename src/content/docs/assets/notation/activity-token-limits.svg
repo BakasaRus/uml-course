@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="300" viewBox="0 0 740 300" role="img" aria-labelledby="title desc">
+  <title id="title">Вместимость, вес и кратность</title>
+  <desc id="desc">Вместимость буфера равна десяти токенам. Вес ребра три. Входной контакт потребляет от трёх до пяти значений за одно выполнение действия.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="300" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Три разных ограничения</tspan></text>
+    <rect x="35" y="115" width="220" height="64" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="145.0" y="141.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="145.0" dy="0">«centralBuffer»</tspan><tspan x="145.0" dy="22">заказы: Order</tspan></text>
+    <text x="145" y="212" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="145" dy="0">{upperBound = 10,</tspan><tspan x="145" dy="21">ordering = FIFO}</tspan></text>
+    <rect x="505" y="115" width="205" height="64" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="607.5" y="141.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="607.5" dy="0">Обработать</tspan><tspan x="607.5" dy="22">пачку заказов</tspan></text>
+    <rect x="491" y="140" width="14" height="14" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 255 147 H 491" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="372" y="132" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="372" dy="0">{weight = 3}</tspan></text>
+    <text x="598" y="85" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="598" dy="0">orders: Order[3..5]</tspan></text>
+    <text x="370" y="270" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Вместимость узла ≠ минимум передачи ≠ вход одного выполнения.</tspan></text>
+  </g>
+</svg>
