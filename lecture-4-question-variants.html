@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лекция 4 — предметная область и концептуальная модель</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-block-size: 100vh;
+      padding: clamp(1.5rem, 4vw, 4rem);
+    }
+
+    main {
+      max-inline-size: 76rem;
+      margin-inline: auto;
+    }
+
+    header {
+      margin-block-end: 2rem;
+      padding-block-end: 1.25rem;
+      border-block-end: 1px solid #cbd5e1;
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      letter-spacing: -0.03em;
+    }
+
+    header p {
+      margin-block-start: 0.6rem;
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    article {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-block-size: 17rem;
+      padding: 1.5rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
+    }
+
+    h2 {
+      color: #1d4ed8;
+      font-size: 1.1rem;
+    }
+
+    ol {
+      display: grid;
+      align-content: start;
+      gap: 1rem;
+      margin: 1.25rem 0 0;
+      padding-inline-start: 1.45rem;
+      line-height: 1.45;
+    }
+
+    li { padding: 0 0 0.5rem 0; }
+
+    @media (max-width: 42rem) {
+      body { padding: 1.25rem; }
+      .grid { grid-template-columns: 1fr; }
+      article { min-block-size: auto; }
+    }
+
+    @media print {
+      @page { margin: 14mm; }
+      body { padding: 0; background: #fff; }
+      header { margin-block-end: 1rem; }
+      .grid { gap: 0.75rem; }
+      article { min-block-size: 0; padding: 1rem; box-shadow: none; break-inside: avoid; }
+      ol { gap: 0.65rem; margin-block-start: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Лекция 4</h1>
+      <p>5 минут · каждый вопрос подразумевает короткий ответ.</p>
+    </header>
+
+    <section class="grid" aria-label="Четыре варианта вопросов">
+      <!-- Вариант 1 -->
+      <article>
+        <h2>Вариант 1</h2>
+        <ol>
+          <li>Почему существительное, найденное методом Аббота, нельзя автоматически считать классом?</li>
+          <li>Что означают круглые скобки и тип после двоеточия в записи операции класса?</li>
+          <li>В чём различие между ассоциацией и обобщением?</li>
+        </ol>
+      </article>
+
+      <!-- Вариант 2 -->
+      <article>
+        <h2>Вариант 2</h2>
+        <ol>
+          <li>Как при разборе именной группы определить, обозначает ли она самостоятельный класс, свойство или роль в связи?</li>
+          <li>Что означают кратности 0..1 и 1..* на конце ассоциации?</li>
+          <li>В чём различие между обычной ассоциацией и композицией?</li>
+        </ol>
+      </article>
+
+      <!-- Вариант 3 -->
+      <article>
+        <h2>Вариант 3</h2>
+        <ol>
+          <li>Как с помощью метода шаблонных классов искать пропущенные понятия, не добавляя лишние классы?</li>
+          <li>Что означают знаки + и - перед атрибутом или операцией класса?</li>
+          <li>В чём различие между атрибутом и операцией класса?</li>
+        </ol>
+      </article>
+
+      <!-- Вариант 4 -->
+      <article>
+        <h2>Вариант 4</h2>
+        <ol>
+          <li>Как проигрывание сценария по CRC-карточкам помогает обнаружить пропущенные или неверно распределённые ответственности?</li>
+          <li>Что означает стрелка навигации на конце ассоциации?</li>
+          <li>В чём различие между ассоциацией и зависимостью?</li>
+        </ol>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

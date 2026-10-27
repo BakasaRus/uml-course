@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лекция 1 — варианты вопросов</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-block-size: 100vh;
+      padding: clamp(1.5rem, 4vw, 4rem);
+    }
+
+    main {
+      max-inline-size: 76rem;
+      margin-inline: auto;
+    }
+
+    header {
+      margin-block-end: 2rem;
+      padding-block-end: 1.25rem;
+      border-block-end: 1px solid #cbd5e1;
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      letter-spacing: -0.03em;
+    }
+
+    header p {
+      margin-block-start: 0.6rem;
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    article {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-block-size: 17rem;
+      padding: 1.5rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
+    }
+
+    h2 {
+      color: #1d4ed8;
+      font-size: 1.1rem;
+    }
+
+    ol {
+      display: grid;
+      align-content: start;
+      gap: 1rem;
+      margin: 1.25rem 0 0;
+      padding-inline-start: 1.45rem;
+      line-height: 1.45;
+    }
+
+    li { padding-inline-start: 0.25rem; }
+
+    @media (max-width: 42rem) {
+      body { padding: 1.25rem; }
+      .grid { grid-template-columns: 1fr; }
+      article { min-block-size: auto; }
+    }
+
+    @media print {
+      @page { margin: 14mm; }
+      body { padding: 0; background: #fff; }
+      header { margin-block-end: 1rem; }
+      .grid { gap: 0.75rem; }
+      article { min-block-size: 0; padding: 1rem; box-shadow: none; break-inside: avoid; }
+      ol { gap: 0.65rem; margin-block-start: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Лекция 1</h1>
+      <p>4 минуты · каждый вопрос подразумевает короткий ответ.</p>
+    </header>
+
+    <section class="grid" aria-label="Четыре варианта вопросов">
+      <article>
+        <h2>Вариант 1</h2>
+        <ol>
+          <li>Какая характеристика модели определяет степень её детализации?</li>
+          <li>Какой уровень архитектуры ИС описывает функции системы и их взаимодействие?</li>
+          <li>Какая UML-диаграмма показывает действия, решения и параллельные ветви процесса?</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Вариант 2</h2>
+        <ol>
+          <li>Какая характеристика модели определяет, для кого она подготовлена?</li>
+          <li>Какой уровень архитектуры ИС описывает понятия предметной области, их связи и правила изменения?</li>
+          <li>Какая UML-диаграмма показывает допустимые состояния объекта и переходы между ними?</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Вариант 3</h2>
+        <ol>
+          <li>Какая характеристика модели отвечает на вопрос, зачем её создают?</li>
+          <li>Какой уровень архитектуры ИС описывает классы, интерфейсы, компоненты и зависимости программной части?</li>
+          <li>Какая UML-диаграмма показывает размещение артефактов на узлах?</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>Вариант 4</h2>
+        <ol>
+          <li>Какая характеристика модели определяет способ её записи: текст, таблица, диаграмма или прототип?</li>
+          <li>Какой уровень архитектуры ИС описывает хранение, передачу и целостность информации?</li>
+          <li>Какая UML-диаграмма показывает внешние роли, их цели и границу системы?</li>
+        </ol>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
