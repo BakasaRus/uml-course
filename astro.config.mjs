@@ -166,6 +166,8 @@ export default defineConfig({
               label: "Расширенная нотация",
               items: [
                 'notation/classifiers-and-namespaces',
+                'notation/types-properties-and-values',
+                'notation/behaviors-events-and-calls',
                 'notation/stereotypes-and-profiles',
                 'notation/constraints-and-ocl',
                 'notation/information-flows',

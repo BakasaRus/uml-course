@@ -33,6 +33,7 @@ Payment Service
 ```plantuml
 @startuml
 top to bottom direction
+allowmixing
 
 package "Архитектура ИС" as ArchitectureProfile <<profile>> {
   class "externalService" as ExternalService <<stereotype>> {
@@ -44,10 +45,10 @@ package "Архитектура ИС" as ArchitectureProfile <<profile>> {
 class "Component" as ComponentMetaclass <<metaclass>>
 
 package "Модель сервиса" as ServiceModel {
-  class "Payment Service" as Payment <<externalService>>
+  component "Payment Service" as Payment <<externalService>>
 }
 
-ExternalService --|> ComponentMetaclass : «extend»
+ExternalService -->> ComponentMetaclass : Extension
 ServiceModel ..> ArchitectureProfile : «apply»
 
 note right of Payment
@@ -56,6 +57,8 @@ criticality = "high"
 end note
 @enduml
 ```
+
+Расширение направлено от стереотипа к метаклассу и имеет **закрашенный треугольный наконечник**. Это не обобщение с пустым треугольником и не связь `«extend»` вариантов использования. Здесь `Payment Service` является компонентом: применение этого стереотипа к обычному классу было бы недопустимо, пока профиль не расширяет также `Class`.
 
 ## Применение профиля
 
