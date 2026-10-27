@@ -178,6 +178,7 @@ export default defineConfig({
               ],
               collapsed: true,
             },
+            'notation/exercises',
           ],
         },
         {
