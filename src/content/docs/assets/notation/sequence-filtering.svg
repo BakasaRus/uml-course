@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="485" viewBox="0 0 740 485" role="img" aria-labelledby="title desc">
+  <title id="title">Фильтрация сообщений и утверждение трасс</title>
+  <desc id="desc">Комбинированный фрагмент assert consider рассматривает только request и accepted. Внутри показаны запрос клиента и ответ сервиса.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="485" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="28" y="40" width="684" height="380" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 28 72 H 231 L 243 60 V 40" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="40" y="63" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="40" dy="0">sd Контракт оплаты</tspan></text>
+    <rect x="70" y="103" width="200" height="55" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="170.0" y="136.28" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="170.0" dy="0">client: Client</tspan></text>
+    <rect x="470" y="103" width="200" height="55" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="570.0" y="136.28" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="570.0" dy="0">service: Payment</tspan></text>
+    <path d="M 170 158 V 398 M 570 158 V 398" fill="none" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <rect x="50" y="190" width="640" height="180" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 50 225 H 389 L 401 213 V 190" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="62" y="214" font-size="17" text-anchor="start" fill="#0F172A"><tspan x="62" dy="0">assert consider {request, accepted}</tspan></text>
+    <path d="M 170 265 H 570" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="370" y="249" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370" dy="0">request</tspan></text>
+    <path d="M 570 330 H 170" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="370" y="314" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370" dy="0">accepted</tspan></text>
+    <text x="370" y="455" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Рассматриваются только request и accepted в пределах рамки.</tspan></text>
+  </g>
+</svg>

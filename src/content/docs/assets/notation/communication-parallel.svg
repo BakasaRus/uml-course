@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="555" viewBox="0 0 740 555" role="img" aria-labelledby="title desc">
+  <title id="title">Параллельная нумерация сообщений</title>
+  <desc id="desc">Координатор отправляет сообщения 1a и 1b без порядка между ними. Сообщение 2 следует на следующем уровне последовательности, но не заменяет получение результатов асинхронных запросов.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="555" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Именованные ветви нумерации</tspan></text>
+    <rect x="255" y="70" width="230" height="60" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="105.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">order: OrderService</tspan></text>
+    <rect x="25" y="250" width="230" height="70" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="140.0" y="290.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="140.0" dy="0">stock: StockService</tspan></text>
+    <rect x="485" y="250" width="230" height="70" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="600.0" y="290.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="600.0" dy="0">pay: PaymentService</tspan></text>
+    <rect x="255" y="445" width="230" height="60" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370.0" y="469.78" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="370.0" dy="0">notice:</tspan><tspan x="370.0" dy="22">NotificationService</tspan></text>
+    <path d="M 300 130 L 140 250" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="145" y="160" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="145" dy="0">1a: проверитьОстаток()</tspan></text>
+    <path d="M 440 130 L 600 250" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="595" y="160" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="595" dy="0">1b: проверитьОплату()</tspan></text>
+    <path d="M 370 130 V 445" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="386" y="370" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="386" dy="0">2: подтвердить()</tspan></text>
+    <text x="370" y="537" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Взаимный порядок 1a и 1b не задан.</tspan></text>
+  </g>
+</svg>

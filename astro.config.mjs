@@ -147,6 +147,7 @@ export default defineConfig({
               label: "Взаимодействия",
               items: [
                 'notation/sequence-diagrams',
+                'notation/system-sequence-diagrams',
                 'notation/sequence-advanced',
                 'notation/communication-diagrams',
                 'notation/interaction-overview-diagrams',
