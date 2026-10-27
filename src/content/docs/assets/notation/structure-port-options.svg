@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="635" viewBox="0 0 740 635" role="img" aria-labelledby="title desc">
+  <title id="title">Сопряжённый и поведенческий порты</title>
+  <desc id="desc">Тип Channel предоставляет Request и требует Reply. Сопряжённый порт q меняет наборы интерфейсов местами. Поведенческий порт обрабатывает обращения поведением владельца.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="635" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Сопряжение меняет предоставляемые и требуемые интерфейсы</tspan></text>
+    <text x="370" y="67" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Тип Channel: предоставляет Request, требует Reply</tspan></text>
+    <rect x="30" y="100" width="230" height="220" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="145" y="129" font-size="19" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="145" dy="0">Provider</tspan></text>
+    <rect x="480" y="100" width="230" height="220" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="595" y="129" font-size="19" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="595" dy="0">Consumer</tspan></text>
+    <rect x="252" y="190" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <rect x="472" y="190" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="240" y="177" font-size="16" text-anchor="end" fill="#0F172A"><tspan x="240" dy="0">p: Channel</tspan></text>
+    <text x="500" y="177" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="500" dy="0">q: ~Channel</tspan></text>
+    <path d="M 268 198 H 320 M 320 155 V 255 M 320 155 H 362 M 320 255 H 356" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 472 198 H 420 M 420 155 V 255 M 420 155 H 384 M 420 255 H 378" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="370" cy="155" r="8" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 370 141 A 14 14 0 0 1 370 169" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <circle cx="370" cy="255" r="8" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 370 241 A 14 14 0 0 0 370 269" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="370" y="126" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="370" dy="0">Request</tspan></text>
+    <text x="370" y="294" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="370" dy="0">Reply</tspan></text>
+    <path d="M 28 350 H 712" fill="none" stroke="#CBD5E1"/>
+    <text x="28" y="386" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Поведенческий порт: обращение обрабатывает владелец</tspan></text>
+    <rect x="100" y="425" width="540" height="155" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="370" y="453" font-size="19" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="370" dy="0">OrderService</tspan></text>
+    <rect x="92" y="493" width="16" height="16" rx="0" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="125" y="483" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="125" dy="0">orders: OrderApi</tspan></text>
+    <path d="M 108 501 H 420" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <rect x="420" y="480" width="80" height="42" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="1.8"/>
+    <text x="125" y="558" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="125" dy="0">isBehavior = true</tspan></text>
+    <text x="460" y="548" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="460" dy="0">поведение</tspan><tspan x="460" dy="20">владельца</tspan></text>
+    <text x="370" y="615" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Тип порта, сопряжение, способ обработки и протокол проверяют отдельно.</tspan></text>
+  </g>
+</svg>
