@@ -3,6 +3,8 @@ title: "Лекция 5. Проектные решения и архитекту�
 pagefind: false
 ---
 
+<div class="print:hidden">
+
 ## Материалы лекции
 
 [Проектные решения и ADR](/modelling/project-decisions), [Техническая диаграмма классов](/notation/technical-class-diagrams), [Архитектура данных](/modelling/data-architecture), [Программная архитектура и слои](/modelling/software-architecture-and-layers), [Диаграмма пакетов](/notation/package-diagrams), [Диаграмма компонентов](/notation/component-diagrams), [Информационные потоки](/notation/information-flows), [Системная архитектура и развёртывание](/modelling/system-architecture-and-deployment), [Диаграмма развёртывания](/notation/deployment-diagrams), [Согласованность, трассируемость и типовые ошибки](/modelling/model-consistency-and-traceability).
@@ -18,6 +20,8 @@ pagefind: false
 | 35–50 | Резерв для вопросов по границам, целостности и допустимым зависимостям. |
 | 50–85 | Обязательная демонстрация одного ADR и технического фрагмента; объяснить готовые пакетное, компонентное и deployment-представления. |
 | 85–90 | Проверить трассировку изменения провайдера и подвести итог. |
+
+</div>
 
 ## Полный материал лекции
 

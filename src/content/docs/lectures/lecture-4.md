@@ -3,6 +3,8 @@ title: "Лекция 4. Предметная область и концепту�
 pagefind: false
 ---
 
+<div class="print:hidden">
+
 ## Материалы лекции
 
 [Предметная область и словарь](/modelling/domain-and-vocabulary), [Методы выделения классов](/modelling/class-identification-methods), [Объекты предметной области](/modelling/domain-objects), [Концептуальная модель](/modelling/conceptual-model), [Концептуальная диаграмма классов](/notation/conceptual-class-diagrams), [Диаграмма объектов](/notation/object-diagrams), [Объектно-ориентированное проектирование](/modelling/object-oriented-design), [Концептуальная и техническая модель](/modelling/conceptual-vs-technical-model).
@@ -21,6 +23,8 @@ pagefind: false
 Это рабочий план занятия с объяснением и построением модели, а не оценка времени
 прочтения текста. Вопросы разбираются при появлении соответствующего элемента;
 фактическую длительность показа нужно проверить репетицией.
+
+</div>
 
 ## Полный материал лекции
 
