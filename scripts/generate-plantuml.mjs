@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { deflateRawSync } from "node:zlib";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { spawn } from "node:child_process";
 import {
   applyPlantUmlDefaults,
   PLANTUML_DIAGRAMS_PATH,
@@ -14,6 +15,38 @@ const DOCS_PATH = path.join(ROOT, "src/content/docs");
 const OUTPUT_PATH = path.join(ROOT, PLANTUML_DIAGRAMS_PATH);
 const PLANTUML_ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_";
 const MAX_ATTEMPTS = 3;
+const LOCAL_JAR = process.env.PLANTUML_JAR;
+const JAVA_COMMAND = process.env.PLANTUML_JAVA ?? "java";
+const LOCAL_DOT = process.env.PLANTUML_DOT;
+const ONLY_MISSING = process.argv.includes("--missing");
+
+function renderLocalSvg(source) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(JAVA_COMMAND, [
+      "-Djava.awt.headless=true",
+      "-DPLANTUML_SECURITY_PROFILE=SANDBOX",
+      "-jar", path.resolve(LOCAL_JAR),
+      "-tsvg", "-pipe", "-charset", "UTF-8",
+      ...(LOCAL_DOT ? ["-graphvizdot", path.resolve(LOCAL_DOT)] : ["-Playout=smetana"]),
+    ], { timeout: PLANTUML_TIMEOUT });
+    const output = [];
+    const errors = [];
+    child.stdout.on("data", (chunk) => output.push(chunk));
+    child.stderr.on("data", (chunk) => errors.push(chunk));
+    child.on("error", reject);
+    child.stdin.on("error", reject);
+    child.on("close", (code) => {
+      const result = Buffer.concat(output).toString("utf8");
+      const svg = result.slice(result.indexOf("<svg"));
+      if (code !== 0 || !svg.startsWith("<svg") || /Syntax Error/i.test(svg)) {
+        reject(new Error(`Local PlantUML failed (${code}): ${Buffer.concat(errors).toString("utf8").trim()}`));
+      } else {
+        resolve(svg);
+      }
+    });
+    child.stdin.end(source);
+  });
+}
 
 async function markdownFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -45,6 +78,7 @@ function encodePlantUml(source) {
 }
 
 async function renderSvg(source) {
+  if (LOCAL_JAR) return renderLocalSvg(source);
   let lastError;
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
@@ -85,6 +119,14 @@ async function generateFile(filePath) {
   for (const source of blocks) {
     const fileName = diagramFileName(filePath, source);
     const outputFile = path.join(OUTPUT_PATH, fileName);
+    if (ONLY_MISSING) {
+      try {
+        await readFile(outputFile);
+        continue;
+      } catch (error) {
+        if (error.code !== "ENOENT") throw error;
+      }
+    }
     const svg = await renderSvg(source);
     await writeFile(outputFile, svg);
     console.log(`Generated ${fileName}`);
