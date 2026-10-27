@@ -3,38 +3,66 @@
   overflow-x: auto;
 }
 
-.plantuml-diagram > svg {
+.plantuml-diagram > .plantuml-zoom > svg {
   display: block;
   max-inline-size: 100%;
-  block-size: auto;
+  /* PlantUML sets an inline pixel height; override it when width is clamped. */
+  block-size: auto !important;
+}
+
+/* The plugin supplies centered dimensions, but its inline transform flies from
+   the source figure. Keep the SVG centered and animate only a small scale.
+   Keep a transform transition so the plugin's transitionend cleanup still runs. */
+.uml-plantuml-svg.starlight-image-zoom-image {
+  transform: scale(0.96) !important;
+  transform-origin: center;
+  transform-box: border-box;
+  transition: transform 150ms ease-out !important;
+}
+
+.starlight-image-zoom-opened .uml-plantuml-svg.starlight-image-zoom-image {
+  transform: scale(1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uml-plantuml-svg.starlight-image-zoom-image {
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* PlantUML SVGs are inlined, so Starlight variables follow the active theme. */
-.plantuml-diagram > svg [fill="#0F172A"],
-.plantuml-diagram > svg [style*="fill:#0F172A"] {
+.uml-plantuml-svg [fill="#0F172A"],
+.uml-plantuml-svg [style*="fill:#0F172A"] {
   fill: var(--sl-color-bg) !important;
 }
 
-.plantuml-diagram > svg [fill="#1E293B"],
-.plantuml-diagram > svg [fill="#E2E2F0"],
-.plantuml-diagram > svg [style*="fill:#1E293B"],
-.plantuml-diagram > svg [style*="fill:#E2E2F0"] {
+.uml-plantuml-svg [fill="#1E293B"],
+.uml-plantuml-svg [fill="#E2E2F0"],
+.uml-plantuml-svg [style*="fill:#1E293B"],
+.uml-plantuml-svg [style*="fill:#E2E2F0"] {
   fill: var(--sl-color-bg-nav) !important;
 }
 
-.plantuml-diagram > svg [fill="#E2E8F0"],
-.plantuml-diagram > svg [style*="fill:#E2E8F0"] {
+.uml-plantuml-svg [fill="#E2E8F0"],
+.uml-plantuml-svg [fill="#222222"],
+.uml-plantuml-svg [fill="#222"],
+.uml-plantuml-svg [style*="fill:#222"],
+.uml-plantuml-svg [style*="fill:#E2E8F0"] {
   fill: var(--sl-color-text) !important;
 }
 
-.plantuml-diagram > svg [stroke="#94A3B8"],
-.plantuml-diagram > svg [stroke="#CBD5E1"],
-.plantuml-diagram > svg [style*="stroke:#94A3B8"],
-.plantuml-diagram > svg [style*="stroke:#CBD5E1"] {
+.uml-plantuml-svg [stroke="#94A3B8"],
+.uml-plantuml-svg [stroke="#CBD5E1"],
+.uml-plantuml-svg [stroke="#222222"],
+.uml-plantuml-svg [stroke="#222"],
+.uml-plantuml-svg [style*="stroke:#222"],
+.uml-plantuml-svg [style*="stroke:#94A3B8"],
+.uml-plantuml-svg [style*="stroke:#CBD5E1"] {
   stroke: var(--sl-color-gray-3) !important;
 }
 
 /* Keep borders and relationship arrows readable at every zoom level. */
-.plantuml-diagram > svg :is(ellipse, line, path, polygon, polyline, rect) {
+.uml-plantuml-svg :is(ellipse, line, path, polygon, polyline, rect) {
   stroke-width: 1.6px !important;
 }

@@ -1,5 +1,6 @@
 import { isSatteriProcessor, satteri } from "@astrojs/markdown-satteri";
 import { applyPlantUmlDefaults } from "../lib/plantuml.js";
+import { plantUmlZoomPlugin } from "./plantuml-zoom.js";
 
 const plantUmlDefaultsPlugin = {
   name: "uml-course-plantuml-defaults",
@@ -30,6 +31,7 @@ export default function plantUmlDefaults() {
             processor: satteri({
               ...options,
               mdastPlugins: [...(options.mdastPlugins ?? []), plantUmlDefaultsPlugin],
+              hastPlugins: [...(options.hastPlugins ?? []), plantUmlZoomPlugin],
             }),
           },
         });
