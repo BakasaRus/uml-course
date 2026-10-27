@@ -137,6 +137,7 @@ export default defineConfig({
               items: [
                 'notation/conceptual-class-diagrams',
                 'notation/technical-class-diagrams',
+                'notation/class-relations-advanced',
                 'notation/object-diagrams',
                 'notation/state-machine-diagrams',
                 'notation/state-machine-advanced',

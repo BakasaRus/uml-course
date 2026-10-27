@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="610" viewBox="0 0 740 610" role="img" aria-labelledby="title desc">
+  <title id="title">Подмножества, производное объединение и переопределение</title>
+  <desc id="desc">Team определяет members как объединение staff и guests. ProjectTeam переопределяет staff типом Employee и кратностью 1..*. Employee специализирует Person. Показан допустимый снимок.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="610" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Уточнение свойств в общей и специализированной модели</tspan></text>
+    <rect x="28" y="75" width="415" height="235" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="235.5" y="106" font-size="20" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="235.5" dy="0">Team</tspan></text>
+    <path d="M 28 124 H 443" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="43" y="156" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="43" dy="0">/members: Person[*] {union}</tspan></text>
+    <text x="43" y="196" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="43" dy="0">staff: Person[*] {subsets members}</tspan></text>
+    <text x="43" y="236" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="43" dy="0">guests: Person[*] {subsets members}</tspan></text>
+    <text x="43" y="276" font-size="16" text-anchor="start" fill="#0F172A"><tspan x="43" dy="0">leader: Person[0..1] {subsets staff}</tspan></text>
+    <rect x="530" y="75" width="180" height="60" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="620.0" y="111.46000000000001" font-size="19" text-anchor="middle" fill="#0F172A"><tspan x="620.0" dy="0">Person</tspan></text>
+    <rect x="530" y="225" width="180" height="60" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="620.0" y="261.46" font-size="19" text-anchor="middle" fill="#0F172A"><tspan x="620.0" dy="0">Employee</tspan></text>
+    <defs><marker id="inheritance" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto"><path d="M 1 1 L 11 6 L 1 11 Z" fill="#FFFFFF" stroke="#334155" stroke-width="1"/></marker></defs>
+    <path d="M 620 225 V 135" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#inheritance)"/>
+    <rect x="28" y="420" width="415" height="105" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="235.5" y="451" font-size="19" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="235.5" dy="0">ProjectTeam</tspan></text>
+    <path d="M 28 467 H 443" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="235.5" y="500" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="235.5" dy="0">staff: Employee[1..*] {redefines Team::staff}</tspan></text>
+    <path d="M 235 420 V 310" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#inheritance)"/>
+    <rect x="485" y="405" width="225" height="155" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="597.5" y="434" text-anchor="middle" font-size="16" text-decoration="underline">team7 : ProjectTeam</text>
+    <path d="M 485 449 H 710" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="597.5" y="474" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="597.5" dy="0">staff = {иван}</tspan></text>
+    <text x="597.5" y="498" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="597.5" dy="0">guests = {ольга}</tspan></text>
+    <text x="597.5" y="522" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="597.5" dy="0">leader = иван</tspan></text>
+    <text x="597.5" y="546" font-size="15" text-anchor="middle" fill="#0F172A"><tspan x="597.5" dy="0">members = {иван, ольга}</tspan></text>
+    <text x="370" y="591" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">members вычисляется из подмножеств; staff уточняется в специализации.</tspan></text>
+  </g>
+</svg>

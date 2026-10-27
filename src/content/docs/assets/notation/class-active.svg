@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="430" viewBox="0 0 740 430" role="img" aria-labelledby="title desc">
+  <title id="title">Пассивный и активный классы</title>
+  <desc id="desc">Активный Worker обозначен дополнительными вертикальными линиями. Пассивный Calculator объявляет операцию запроса total. Worker объявляет приём сигнала JobReady.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#334155" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="740" height="430" rx="12" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#0F172A" stroke-linejoin="round" stroke-linecap="round">
+    <text x="28" y="35" font-size="19" text-anchor="start" fill="#0F172A" font-weight="700"><tspan x="28" dy="0">Активность класса и контракт признаков</tspan></text>
+    <rect x="30" y="75" width="300" height="220" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <text x="180" y="108" font-size="20" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="180" dy="0">Calculator</tspan></text>
+    <path d="M 30 130 H 330" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="180" y="180" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="180" dy="0">+ total(): Money {query}</tspan></text>
+    <rect x="410" y="75" width="300" height="220" rx="0" fill="#F8FAFC" stroke="#334155" stroke-width="1.8"/>
+    <path d="M 421 75 V 295 M 699 75 V 295" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="560" y="108" font-size="20" text-anchor="middle" fill="#0F172A" font-weight="700"><tspan x="560" dy="0">Worker</tspan></text>
+    <path d="M 421 130 H 699 M 421 194 H 699" fill="none" stroke="#334155" stroke-width="1.8"/>
+    <text x="560" y="167" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="560" dy="0">+ process(job: Job)</tspan></text>
+    <text x="560" y="217" font-size="15" text-anchor="middle" fill="#475569"><tspan x="560" dy="0">receptions</tspan></text>
+    <text x="560" y="251" font-size="16" text-anchor="middle" fill="#0F172A"><tspan x="560" dy="0">«signal» JobReady(job: Job)</tspan></text>
+    <text x="180" y="332" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="180" dy="0">Пассивный класс</tspan><tspan x="180" dy="22">isActive = false</tspan></text>
+    <text x="560" y="332" font-size="17" text-anchor="middle" fill="#0F172A"><tspan x="560" dy="0">Активный класс</tspan><tspan x="560" dy="22">isActive = true</tspan></text>
+    <text x="370" y="402" font-size="16" text-anchor="middle" fill="#475569"><tspan x="370" dy="0">Собственное поведение объекта не требует отдельного потока ОС.</tspan></text>
+  </g>
+</svg>
