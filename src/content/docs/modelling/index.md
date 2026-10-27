@@ -18,4 +18,6 @@ slug: modelling
 
 ## Переход к нотации UML
 
+После основного маршрута можно разобрать [распределение ответственности, GRASP и паттерны](/modelling/responsibility-and-patterns), затем [получение проверок и тестов из моделей](/modelling/model-based-testing). Это дополнительные темы для обоснования и проверки решений; отдельные лабораторные по ним не требуются.
+
 Основные соответствия между вопросами анализа и нотацией собраны в [выборе UML-диаграммы](/notation/choosing-a-diagram) и [классификаторах, именах и пространствах имён](/notation/classifiers-and-namespaces). Подробное назначение конкретных диаграмм раскрывается в [диаграмме использования](/notation/usecase-diagrams), [диаграмме деятельности](/notation/activity-diagrams), [концептуальной диаграмме классов](/notation/conceptual-class-diagrams), [диаграмме последовательности](/notation/sequence-diagrams), [диаграмме компонентов](/notation/component-diagrams) и [диаграмме развёртывания](/notation/deployment-diagrams).

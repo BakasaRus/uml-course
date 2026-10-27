@@ -107,6 +107,8 @@ export default defineConfig({
               'modelling/software-architecture-and-layers',
               'modelling/system-architecture-and-deployment',
               'modelling/model-consistency-and-traceability',
+              'modelling/responsibility-and-patterns',
+              'modelling/model-based-testing',
             ],
             collapsed: true,
           }],
